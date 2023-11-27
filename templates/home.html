@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #3498db;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Diabetes Prediction Form</h2>
+    <p>Fill in the details below for diabetes prediction.</p>
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        <label for="Pregrenancies">Pregnancies:</label>
+        <input type="number" name="Pregrenancies" required>
+
+        <label for="Glucose">Glucose:</label>
+        <input type="number" name="Glucose" step="0.1" required>
+
+        <label for="BloodPressure">Blood Pressure:</label>
+        <input type="number" name="BloodPressure" required>
+
+        <label for="SkinThickness">Skin Thickness:</label>
+        <input type="number" name="SkinThickness" required>
+
+        <label for="Insulin">Insulin:</label>
+        <input type="number" name="Insulin" required>
+
+        <label for="BMI">BMI:</label>
+        <input type="number" name="BMI" step="0.1" required>
+
+        <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function:</label>
+        <input type="number" name="DiabetesPedigreeFunction" step="0.1" required>
+
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" required>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
